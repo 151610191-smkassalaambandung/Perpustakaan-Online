@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'Asia/Jakarta',
+    'timezone' => 'UTC',
 
     /*
     |--------------------------------------------------------------------------
@@ -167,7 +167,9 @@ return [
          * Package Service Providers...
          */
 
-
+        Collective\Html\HtmlServiceProvider::class,
+        Laratrust\LaratrustServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -177,10 +179,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        //add on
-        Collective\Html\HtmlServiceProvider::class,
-        Laratrust\LaratrustServiceProvider::class,
-        Yajra\Datatables\DatatablesServiceProvider::class,
+        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
 
     ],
 
@@ -228,10 +227,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        //add on
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-        'Laraturst' => Laratrust\LaratrustFacade::class,
+        'Laratrust' => Laratrust\LaratrustFacade::class,
 
     ],
 
